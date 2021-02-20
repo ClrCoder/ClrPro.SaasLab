@@ -1,0 +1,60 @@
+<Project>
+  <!--Use this for VS/Release debugging with precise breakpoints.-->
+  <!--<Choose>
+    <When Condition=" ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'True') and '$(Configuration)' == 'Release'">
+      <PropertyGroup>
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>false</Optimize>
+      </PropertyGroup>
+    </When>
+  </Choose>
+
+  <Choose>
+    <When Condition="('$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'True') and '$(Configuration)' == 'Release'">
+      <PropertyGroup>
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>true</Optimize>
+      </PropertyGroup>
+    </When>
+  </Choose>-->
+
+  <!--Most of settings could be defined in Directory.Build.props, but here we have more things defined for conditional definitions-->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Analyzers.ruleset</CodeAnalysisRuleSet>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+
+    <Product>OAuth Walkthrough</Product>
+    <Company>ClrCoder Community</Company>
+    <Copyright>Copyright © ClrCoder Community 2021</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(CodeAnalysisRuleSet)" Condition="'$(CodeAnalysisRuleSet)' != ''" Link="Properties\%(Filename)%(Extension)" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="Properties\stylecop.json" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\SharedAssemblyInfo.cs" Visible="true">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)src\CS9Shims.cs" Visible="true">
+      <Link>Properties\CS9Shims.cs</Link>
+    </Compile>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NetFramework' Or '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="IndexRange" Version="1.0.0" />
+    <PackageReference Include="Nullable" Version="1.3.0" />
+  </ItemGroup>
+
+</Project>

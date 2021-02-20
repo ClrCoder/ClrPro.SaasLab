@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31004.235
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClrPro.SaasLab.Walkthrough.OAuth.Api", "src\ClrPro.SaasLab.Walkthrough.OAuth.Api\ClrPro.SaasLab.Walkthrough.OAuth.Api.csproj", "{E1E1D39D-FD67-49C5-9C95-FC3759647A3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{9B66DA41-B72B-43F5-897F-EF0A31E95209}"
+	ProjectSection(SolutionItems) = preProject
+		Analyzers.ruleset = Analyzers.ruleset
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".edit", ".edit", "{932D02B0-C1C5-469E-BAEF-8C79BEF0F383}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClrPro.SaasLab.Walkthrough.OAuth.SPA", "src\ClrPro.SaasLab.Walkthrough.OAuth.SPA\ClrPro.SaasLab.Walkthrough.OAuth.SPA.csproj", "{44D3C005-5643-4667-BED7-5A592167096D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1E1D39D-FD67-49C5-9C95-FC3759647A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E1D39D-FD67-49C5-9C95-FC3759647A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E1D39D-FD67-49C5-9C95-FC3759647A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E1D39D-FD67-49C5-9C95-FC3759647A3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D3C005-5643-4667-BED7-5A592167096D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D3C005-5643-4667-BED7-5A592167096D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D3C005-5643-4667-BED7-5A592167096D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D3C005-5643-4667-BED7-5A592167096D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4889F1AA-2A43-48B8-BCF0-F6D3ACC5E83A}
+	EndGlobalSection
+EndGlobal
